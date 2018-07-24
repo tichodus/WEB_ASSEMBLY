@@ -74,6 +74,7 @@ typings/
 
 #dist
 dist/
+public/
 
 #vscode
 .vscode/
