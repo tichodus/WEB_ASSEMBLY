@@ -1,7 +1,5 @@
-import wasm from './lib/calculator.c'
+import wasm from './lib/calculator.cpp'
 
 wasm.initialize().then(module => {
-  const result = module._add(1, 3)
-
-  console.log('result: ', result);
+console.log(module._mul(module._add(3,5),module._add(3,5)));
 })
