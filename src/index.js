@@ -1,5 +1,6 @@
-import wasm from './lib/calculator.cpp'
+import React from 'react';
+import ReactDOM  from 'react-dom';
+import App from './components/app/app.component';
 
-wasm.initialize().then(module => {
-console.log(module._mul(module._add(3,5),module._add(3,5)));
-})
+ReactDOM.render(<App />,
+    document.getElementById('root'));
