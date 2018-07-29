@@ -1,0 +1,48 @@
+.container{
+    width: 600px;
+    height: 800px;
+    background: gray;
+    margin:50px;
+}
+
+.calculator__result{
+    padding: 20px;
+    height: 100px;
+    width:100%;
+}
+
+.calculator__result input{
+    width: calc(100% - 80px);
+    padding: 12px 20px;
+    margin: 8px 0;
+    padding-left: 40px;
+    font-size: 30px;
+}
+
+.calculator__buttons{
+    margin-top:-350px;
+    width:100px;
+    height:100px;
+    padding:10px;
+}
+
+.calculator__buttons button{
+    width: inherit;
+    height: inherit;
+    padding:20px;
+}
+
+
+.calculator__span{
+    color:white;
+    font-size: 20px;
+    padding:50px;
+}
+.container-flex{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flex-item{
+
+}

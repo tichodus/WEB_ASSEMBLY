@@ -1,7 +1,6 @@
-import wasm from './lib/calculator.c'
+import React from 'react';
+import ReactDOM  from 'react-dom';
+import App from './components/app/app.component';
 
-wasm.initialize().then(module => {
-  const result = module._add(1, 3)
-
-  console.log('result: ', result);
-})
+ReactDOM.render(<App />,
+    document.getElementById('root'));

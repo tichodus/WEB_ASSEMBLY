@@ -3,11 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const METADATA = {
   DIST: path.resolve(__dirname, "dist"),
-  EMCC: process.env.EMCCPATH || "/usr/lib/emscripten/emcc",
-  EMCCFLAGS: process.env.EMCCFLAGS || "-O3",
+  EMCC: "~/Tools/emsdk/emscripten/1.38.10/emcc",
+  EMCCFLAGS: process.env.EMCCFLAGS || ['-O3'],
   HOST: process.env.HOST || "localhost",
   PORT: process.env.PORT || 9000
 };
+
+
 
 module.exports = {
   entry: "./src/index.js",
@@ -19,12 +21,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["babel-preset-env"]
+            presets: ["babel-preset-env", "react"]
           }
         }
       },
@@ -34,7 +36,6 @@ module.exports = {
           loader: "cpp-wasm-loader",
           options: {
             publicPath: METADATA.DIST,
-            emccPath: METADATA.EMCC,
             emccFlags: [METADATA.EMCCFLAGS]
           }
         }
